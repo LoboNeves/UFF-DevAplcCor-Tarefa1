@@ -12,6 +12,9 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>SayHello.jsp</title>
     </head>
+    <header>
+        <h1>Cabeçalho</h1>
+    </header>
     <body>
         <jsp:useBean id="myBean" class="hello.MessageBean"/>
         <h1>Aplicativo HelloWorld</h1>
@@ -20,4 +23,7 @@
         <jsp:getProperty name="myBean" property="msg"/>, <%=request.getParameter("nome")%>!</h2>
         <jsp:getProperty name="myBean" property="msg2"/> <jsp:getProperty name="myBean" property="aut"/>
     </body>
+    <footer>
+        <h1>Rodapé</h1>
+    </footer>
 </html>
