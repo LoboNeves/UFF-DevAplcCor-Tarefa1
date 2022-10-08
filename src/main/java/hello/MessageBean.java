@@ -10,6 +10,7 @@ package hello;
 import java.beans.*;
 import java.io.Serializable;
 import java.util.Calendar;
+import java.util.Date;
 
 /**
  *
@@ -62,6 +63,7 @@ public class MessageBean implements Serializable {
 
     public int getHoras() {
         Calendar hoje = Calendar.getInstance();
+        hoje.setTime(new Date());
         int horas = hoje.get(Calendar.HOUR_OF_DAY);
         return horas;
     }
