@@ -11,6 +11,7 @@ import java.beans.*;
 import java.io.Serializable;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.TimeZone;
 
 /**
  *
@@ -63,7 +64,7 @@ public class MessageBean implements Serializable {
 
     public int getHoras() {
         Calendar hoje = Calendar.getInstance();
-        hoje.setTime(new Date());
+        hoje.setTimeZone(TimeZone.getTimeZone("UTC-03:00"));
         int horas = hoje.get(Calendar.HOUR_OF_DAY);
         return horas;
     }
