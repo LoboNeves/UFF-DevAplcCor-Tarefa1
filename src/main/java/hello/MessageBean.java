@@ -74,18 +74,22 @@ public class MessageBean implements Serializable {
             bomdia = "Bom dia";
             boatarde = "Boa tarde";
             boanoite =  "Boa noite";
+            break;
             case "en":
             bomdia = "Good morning";
             boatarde = "Good afternoon";
             boanoite =  "Good Evening";
+            break;
             case "de":
             bomdia = "Guten Morgen";
             boatarde = "Guten Nachmittag";
             boanoite =  "Guten Abend";
+            break;
             case "fr":
             bomdia = "Bonjour";
             boatarde = "Bon Après-midi";
             boanoite =  "Bonsoir";
+            break;
         }
 
         if(horas > 0 && horas <= 12) return bomdia;
