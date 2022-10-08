@@ -22,7 +22,7 @@ public class MessageBean implements Serializable {
     private String lang;
     private String msg;
     private String msg2;
-    private int horas;
+    private String cumprimento;
         
     public MessageBean() {
     }
@@ -61,9 +61,36 @@ public class MessageBean implements Serializable {
         return "";
     }
 
-    public int getHoras() {
+    public String getCumprimento() {
         DateTime dt = new DateTime();
         int horas = dt.getHourOfDay();
-        return horas-3;
+        horas = horas-3;
+        String bomdia  = "Bom dia";
+        String boatarde = "Boa tarde";
+        String boanoite =  "Boa noite";
+
+        switch (this.lang){
+            case "pt":
+            bomdia = "Bom dia";
+            boatarde = "Boa tarde";
+            boanoite =  "Boa noite";
+            case "en":
+            bomdia = "Good morning";
+            boatarde = "Good afternoon";
+            boanoite =  "Good Evening";
+            case "de":
+            bomdia = "Guten Morgen";
+            boatarde = "Guten Nachmittag";
+            boanoite =  "Guten Abend";
+            case "fr":
+            bomdia = "Bonjour";
+            boatarde = "Bon Après-midi";
+            boanoite =  "Bonsoir";
+        }
+
+        if(horas > 0 && horas <= 12) return bomdia;
+        else if(horas >=12 && horas < 18) return boatarde;
+        else if(horas >=18 && horas < 24) return boanoite;
+        return "";    
     }
 }
