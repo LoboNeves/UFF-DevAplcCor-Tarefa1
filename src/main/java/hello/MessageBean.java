@@ -64,6 +64,6 @@ public class MessageBean implements Serializable {
     public int getHoras() {
         DateTime dt = new DateTime();
         int horas = dt.getHourOfDay();
-        return horas;
+        return horas-3;
     }
 }
