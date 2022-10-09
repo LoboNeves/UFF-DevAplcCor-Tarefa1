@@ -92,9 +92,9 @@ public class MessageBean implements Serializable {
             break;
         }
 
-        if(horas < 12) return bomdia;
+        if(horas > 0 && horas <= 12) return bomdia;
         else if(horas >=12 && horas < 18) return boatarde;
-        else if(horas >=18 && horas <= 24) return boanoite;
+        else if(horas >=18 && horas <= 24 || horas < 0) return boanoite;
         return "";    
     }
 }
